@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Add a New Show</h1>
-    <form action="new_show" method="get">
+    <form action="/new_show" method="post">
+        {% csrf_token %}
         <div>
             <p>Title</p>
                 <input type="text" name="title" id="title">
@@ -19,7 +20,7 @@
             </div>
             <div>
                 <p>Release Date</p>
-                    <input type="text" name="release_date" id="title">
+                    <input type="date" name="release_date" id="title">
             </div>
         </div>
         <div>
