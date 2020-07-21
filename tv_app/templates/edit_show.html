@@ -7,7 +7,15 @@
 </head>
 <body>
     <h1>Edit Show </h1>
-    <form action="shows/{{show.id}}/update_show" method="post">
+    {% if messages %}
+    <ul class = "messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class = "{{ message.tags }}"{% endif %}>{{ message }}
+        </li>
+        {% endfor%}
+    </ul>
+    {% endif %}
+    <form action="/update_show" method="post">
         {% csrf_token %}
         <div>
             <p>Title</p>
